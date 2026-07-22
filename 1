@@ -1,0 +1,117 @@
+// ==========================================
+// DESTRUCTURING ASSIGNMENT
+// ==========================================
+// Membuat sebuah konstanta (const) bernama 'book' yang menyimpan data berupa objek
+const book = {
+  // Properti 'title' menyimpan nilai string "Manusia Setengah Salmon"
+  "title": "Manusia Setengah Salmon",
+  // Properti 'author' menyimpan nilai string "Raditya Dika"
+  "author": "Raditya Dika",
+  // Properti 'publisher' menyimpan data objek bersarang (nested object)
+  "publisher": {
+    // Sub-properti 'name' menyimpan nilai string "Gagas Media"
+    "name": "Gagas Media",
+    // Sub-properti 'address' menyimpan nilai string "Jakarta Selatan"
+    "address": "Jakarta Selatan"
+  }
+}
+
+// Memecah (destructuring) properti dari objek 'book' menjadi variabel terpisah
+// - 'title' diubah nama variabelnya menjadi 'bookTitle'
+// - 'author' diberi nilai default "RD" (walau di objek nilainya tetap "Raditya Dika")
+// - 'publisher' dipecah lebih dalam untuk mengambil properti 'name' dan 'address'
+const {title: bookTitle, author = "RD", publisher:{name, address}} = book;
+
+// Mencetak hasil ekstraksi variabel ke dalam konsol browser/terminal
+console.log(bookTitle, author, name, address);
+
+
+// ==========================================
+// ARRAY
+// ==========================================
+// Membuat variabel 'products' yang bertipe Array, menyimpan 3 data string
+var products = ["Flashdisk", "SDD", "Monitor"];
+
+// Mengambil elemen HTML dengan ID "demo", lalu mengubah isinya (innerHTML) dengan data pertama (indeks 0) dari array products yaitu "Flashdisk"
+document.getElementById("demo").innerHTML = products[0];
+
+
+// ==========================================
+// ARROW FUNCTION
+// ==========================================
+// Membuat fungsi bernama 'greeting' menggunakan Arrow Function (=>) yang menerima satu parameter 'message'
+var greeting = message => {
+  // Menampilkan pesan pop-up peringatan di browser berisi isi dari variabel 'message'
+  alert(message);
+}
+// Mengeksekusi fungsi 'greeting' dengan memberikan argumen string 'Selamat Pagi'
+greeting('Selamat Pagi');
+
+// Membuat fungsi 'greetingNew' dengan dua parameter menggunakan Arrow Function
+// Catatan: Terdapat potensi error di kode aslinya karena parameter kedua bernama 'message', tapi di dalam fungsi yang dipanggil adalah 'message2'
+var greetingNew = (message1, message) => {
+  // Menampilkan pesan pop-up hasil gabungan variabel (message2 akan error jika tidak diubah namanya di parameter)
+  alert(message1 + message2);
+}
+
+
+// ==========================================
+// CLASS
+// ==========================================
+// Membuat cetak biru (blueprint) objek dengan nama class 'Holiday'
+class Holiday {
+  // Method constructor adalah blok kode yang otomatis dijalankan pertama kali saat objek baru dibuat
+  constructor(destination, days) {
+    // Mengisi properti 'destination' pada kelas ini dengan nilai parameter 'destination'
+    this.destination = destination;
+    // Mengisi properti 'days' pada kelas ini dengan nilai parameter 'days'
+    this.days = days;
+  }
+  
+  // Membuat method (fungsi di dalam class) bernama 'info'
+  info() {
+    // Menampilkan pesan pop-up berisi data dari properti objek
+    alert(this.destination + " will take " + this.days + " days.");
+  }
+}
+
+// Membuat objek (instance) baru bernama 'trip' dari class 'Holiday' dengan nilai "Semeru" dan 10
+var trip = new Holiday("Semeru", 10);
+// Menjalankan method 'info()' milik objek 'trip'
+trip.info();
+
+
+// ==========================================
+// TEMPLATE STRINGS
+// ==========================================
+// Mendeklarasikan variabel tipe let untuk nama depan
+let firstName = 'Cristiano';
+// Mendeklarasikan variabel tipe let untuk nama belakang
+let lastName = 'Ronaldo';
+// Mendeklarasikan variabel 'age' yang nilainya diambil dari inputan pengguna melalui prompt browser
+let age = prompt("Masukkan umur Cristiano Ronaldo");
+
+// Membuat variabel 'result' menggunakan backtick (`) agar bisa menyisipkan variabel langsung ke dalam string (interpolasi)
+let result = `${firstName} ${lastName} is ${age} years old`;
+// Menampilkan hasil gabungan string tersebut ke layar menggunakan alert
+alert(result)
+
+
+// ==========================================
+// VARIABLES (var, let, const)
+// ==========================================
+// Membuat variabel tipe var bernama 'tanggal' diisi dengan tipe number 29
+var tanggal = 29;
+// Variabel var bisa diubah tipe dan nilainya, di sini diubah jadi string "30"
+tanggal = "30";
+
+// Membuat variabel tipe let bernama 'namaBulan' dengan tipe string "September"
+let namaBulan = "September";
+// Variabel let juga dapat diubah nilainya, di sini diubah menjadi tipe number 10
+namaBulan = 10;
+
+// Membuat variabel tipe const (konstan) yang nilainya mutlak dan tidak boleh diubah-ubah lagi setelah dideklarasikan
+const tahun = "2022";
+
+// Menampilkan pesan pop-up hasil penggabungan antara variabel dan spasi menggunakan tanda tambah (+)
+alert(tanggal + " " + namaBulan + " "+tahun)
