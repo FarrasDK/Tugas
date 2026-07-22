@@ -1,30 +1,51 @@
+<!-- HTML -->
 <!DOCTYPE html>
+<!-- Membuka tag utama HTML -->
 <html>
 
+<!-- Membuka tag head yang berisi metadata dan resource  -->
 <head>
   <meta charset="UTF-8" />
+  <!-- Menentukan judul halaman web yang akan muncul di tab browser -->
   <title>Hello World</title>
+  <!-- Mengimpor library utama React versi 18 dari CDN unpkg -->
   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <!-- Mengimpor library React DOM versi 18 yang khusus menangani manipulasi DOM di browser -->
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
   <!-- Don't use this in production: -->
+  <!-- Mengimpor compiler Babel untuk menerjemahkan sintaks JSX dan ES6+ menjadi JavaScript standar secara langsung (on-the-fly) di browser -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<!-- Menutup tag head -->
 </head>
 
 <body>
+  <!-- Membuat elemen <div> dengan atribut id="root". Ini adalah wadah (container) kosong tempat seluruh komponen aplikasi React akan di-inject/dirender -->
   <div id="root"></div>
+  
+  <!-- Membuka tag script dan memberi tipe "text/babel" agar kode di dalamnya diproses/diterjemahkan oleh Babel terlebih dahulu -->
   <script type="text/babel">
 
+    <!-- Mendefinisikan sebuah komponen fungsional React dengan nama MyApp -->
     function MyApp() {
+      <!-- Komponen ini mengembalikan (return) elemen JSX berupa tag heading <h1> yang berisi teks "Hello, world!" -->
       return <h1>Hello, world!</h1>;
+    <!-- Menutup blok fungsi komponen MyApp -->
     }
 
+    <!-- Mencari elemen HTML dengan id 'root' dan menyimpannya ke dalam konstanta (variabel) bernama 'container' -->
     const container = document.getElementById('root');
+    <!-- Membuat React Root (akar utama React) berdasarkan elemen 'container' yang telah diambil sebelumnya -->
     const root = ReactDOM.createRoot(container);
+    <!-- Memerintahkan React Root untuk merender (menggambar/menampilkan) komponen <MyApp /> ke dalam DOM browser -->
     root.render(<MyApp />);
 
+  <!-- Menutup tag script React/Babel -->
   </script>
+  
+  <!-- Mengimpor script tambahan khusus dari Replit untuk menampilkan badge di pojok aplikasi -->
   <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+<!-- Menutup tag body -->
 </body>
 
 </html>
